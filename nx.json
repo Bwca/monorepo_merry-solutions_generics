@@ -18,7 +18,12 @@
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.ts"]
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.ts",
+        "{workspaceRoot}/jest.preset.js"
+      ]
     }
   },
   "namedInputs": {

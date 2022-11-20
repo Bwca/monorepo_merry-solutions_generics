@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@merry-solutions/deep-nested": ["packages/deep-nested/src/index.ts"],
+      "@merry-solutions/deep-substitutedd": [
+        "packages/deep-substituted/src/index.ts"
+      ],
       "@merry-solutions/property-path": ["packages/property-path/src/index.ts"],
       "@merry-solutions/shared": ["packages/shared/src/index.ts"]
     }

@@ -1,1 +1,1 @@
-export { PropertyStringPath } from './property-string-path.type';
+export { PropertyPath } from './property-path.type';
