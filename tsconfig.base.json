@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@merry-solutions/property-path": ["packages/property-path/src/index.ts"]
+      "@merry-solutions/property-path": ["packages/property-path/src/index.ts"],
+      "@merry-solutions/shared": ["packages/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -5,13 +5,10 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/esbuild:esbuild",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/property-path",
-        "main": "packages/property-path/src/index.ts",
-        "tsConfig": "packages/property-path/tsconfig.lib.json",
-        "assets": ["packages/property-path/*.md"]
+        "command": "tsup packages/property-path/src/lib/index.ts --minify --dts --tsconfig='packages/property-path/tsconfig.json' --outDir='packages/property-path/dist' && rm packages/property-path/dist/index.js"
       }
     },
     "publish": {
