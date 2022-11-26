@@ -1,1 +1,1 @@
-export * from './lib/deep-nested';
+export * from './lib/deep-nested.type';

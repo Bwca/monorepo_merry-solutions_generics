@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@merry-solutions/deep-filter": ["packages/deep-filter/src/index.ts"],
       "@merry-solutions/deep-nested": ["packages/deep-nested/src/index.ts"],
-      "@merry-solutions/deep-substitutedd": [
+      "@merry-solutions/deep-substituted": [
         "packages/deep-substituted/src/index.ts"
       ],
       "@merry-solutions/property-path": ["packages/property-path/src/index.ts"],
