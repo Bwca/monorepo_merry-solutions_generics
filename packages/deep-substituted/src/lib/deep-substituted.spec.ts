@@ -1,5 +1,5 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { User } from '../../../shared/src';
+import { User } from '@merry-solutions/shared';
 import { DeepSubstituted } from './deep-substituted';
 
 it('Should provide proper intellisense', () => {

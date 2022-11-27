@@ -1,8 +1,8 @@
 import { PropertyPath } from '@merry-solutions/property-path';
 
-export function getNestedValue<T, D extends number>(
-  a: T,
-  p: PropertyPath<T, D>
+export function getNestedValue<TYPE, DEPTH extends number>(
+  a: TYPE,
+  p: PropertyPath<TYPE, DEPTH>
 ): unknown {
   return (<string>p)
     .split('.')

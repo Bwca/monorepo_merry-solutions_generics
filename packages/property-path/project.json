@@ -31,7 +31,8 @@
       "options": {
         "jestConfig": "packages/property-path/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["build"]
     }
   },
   "tags": []

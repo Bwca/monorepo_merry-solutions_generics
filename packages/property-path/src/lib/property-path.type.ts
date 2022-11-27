@@ -1,18 +1,26 @@
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { DEFAULT_DEPTH_LEVEL } from '@merry-solutions/shared';
+
 type Primitive = string | number | bigint | boolean | undefined | symbol;
 
 export type PropertyPath<
-  T,
-  D extends number,
-  L extends number[] = [],
-  Prefix = ''
+  TYPE,
+  DEPTH extends number = DEFAULT_DEPTH_LEVEL,
+  LEVEL extends number[] = [],
+  PREFIX = ''
 > = {
-  [K in keyof T]: L['length'] extends D
+  [KEY in keyof TYPE]: LEVEL['length'] extends DEPTH
     ? never
-    : K extends 'valueOf' | 'toString'
+    : KEY extends 'valueOf' | 'toString'
     ? never
-    : T[K] extends Primitive | Array<unknown>
-    ? `${string & Prefix}${string & K}`
+    : TYPE[KEY] extends Primitive | Array<unknown>
+    ? `${string & PREFIX}${string & KEY}`
     :
-        | `${string & Prefix}${string & K}`
-        | PropertyPath<T[K], D, [1, ...L], `${string & Prefix}${string & K}.`>;
-}[keyof T];
+        | `${string & PREFIX}${string & KEY}`
+        | PropertyPath<
+            TYPE[KEY],
+            DEPTH,
+            [1, ...LEVEL],
+            `${string & PREFIX}${string & KEY}.`
+          >;
+}[keyof TYPE];

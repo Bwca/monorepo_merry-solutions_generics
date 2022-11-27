@@ -1,12 +1,12 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { Book, User } from '@merry-solutions/shared';
 
-import { PropertyPath } from './property-path.type';
+import { PropertyPath } from '../../dist';
 
 it('Should provide proper intellisense', () => {
   // Arrange
-  const userPropPath: PropertyPath<User, 3> = 'address.geo.lng';
-  const bookPath: PropertyPath<Book, 3> = 'details.author.name';
+  const userPropPath: PropertyPath<User> = 'address.geo.lng';
+  const bookPath: PropertyPath<Book> = 'details.author.name';
 
   // Assert
   expect([userPropPath, bookPath]).toBeTruthy();

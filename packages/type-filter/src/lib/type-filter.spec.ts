@@ -1,5 +1,5 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import { User } from '../../../shared/src';
+import { User } from '@merry-solutions/shared';
 import { typeFilter } from '../../dist';
 
 describe('Tests for typeFilter', () => {

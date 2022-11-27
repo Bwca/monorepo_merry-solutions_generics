@@ -1,5 +1,5 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
-import { User } from '../../../shared/src';
+import { User } from '@merry-solutions/shared';
 import { DeepNested } from './deep-nested.type';
 
 it('Should provide proper intellisense', () => {

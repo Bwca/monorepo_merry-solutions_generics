@@ -1,18 +1,18 @@
 import { PropertyPath } from '@merry-solutions/property-path';
 
 export type DeepNested<
-  T,
-  D extends number,
-  K extends PropertyPath<T, D>,
-  L extends number[] = []
+  TYPE,
+  DEPTH extends number,
+  PATH extends PropertyPath<TYPE, DEPTH>,
+  LEVEL extends number[] = []
 > = {
-  [P in keyof T]: L['length'] extends D
+  [KEY in keyof TYPE]: LEVEL['length'] extends DEPTH
     ? never
-    : K extends `${string & P}.${infer R}`
+    : PATH extends `${string & KEY}.${infer REMAINING_PATH}`
     ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      DeepNested<T[P], D, R, [1, ...L]>
-    : P extends K
-    ? T[P]
+      DeepNested<TYPE[KEY], DEPTH, REMAINING_PATH, [1, ...LEVEL]>
+    : KEY extends PATH
+    ? TYPE[KEY]
     : never;
-}[keyof T];
+}[keyof TYPE];

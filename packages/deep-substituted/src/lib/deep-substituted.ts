@@ -1,19 +1,25 @@
 import { PropertyPath } from '@merry-solutions/property-path';
 
 export type DeepSubstituted<
-  T,
-  D extends number,
-  K extends PropertyPath<T, D>,
-  S,
-  L extends number[] = []
+  TYPE,
+  DEPTH extends number,
+  PATH extends PropertyPath<TYPE, DEPTH>,
+  SUBSTITUTION,
+  LEVEL extends number[] = []
 > = {
-  [P in keyof T]: L['length'] extends D
+  [KEY in keyof TYPE]: LEVEL['length'] extends DEPTH
     ? never
-    : K extends `${string & P}.${infer R}`
-    ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      DeepSubstituted<T[P], D, R, S, [1, ...L]>
-    : P extends K
-    ? S
-    : T[P];
+    : PATH extends `${string & KEY}.${infer REMAINING_PATH}`
+    ? DeepSubstituted<
+        TYPE[KEY],
+        DEPTH,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        REMAINING_PATH,
+        SUBSTITUTION,
+        [1, ...LEVEL]
+      >
+    : KEY extends PATH
+    ? SUBSTITUTION
+    : TYPE[KEY];
 };
