@@ -1,1 +1,1 @@
-export * from './lib/deep-substituted';
+export * from './lib';

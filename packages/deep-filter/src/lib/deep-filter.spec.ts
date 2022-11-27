@@ -1,6 +1,5 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { User } from '../../../shared/src';
-
 import { deepFilter } from './deep-filter';
 
 describe('Tests for deepFilter', () => {

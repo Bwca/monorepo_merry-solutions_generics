@@ -1,1 +1,1 @@
-export * from './lib/deep-filter';
+export * from './lib';

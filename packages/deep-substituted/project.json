@@ -5,13 +5,10 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/esbuild:esbuild",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/deep-substituted",
-        "main": "packages/deep-substituted/src/index.ts",
-        "tsConfig": "packages/deep-substituted/tsconfig.lib.json",
-        "assets": ["packages/deep-substituted/*.md"]
+        "command": "tsup packages/deep-substituted/src/lib/index.ts --minify --dts --tsconfig='packages/deep-substituted/tsconfig.json' --outDir='packages/deep-substituted/dist' && rm packages/deep-substituted/dist/index.js"
       }
     },
     "publish": {

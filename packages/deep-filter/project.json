@@ -5,13 +5,10 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/esbuild:esbuild",
+      "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/deep-filter",
-        "main": "packages/deep-filter/src/index.ts",
-        "tsConfig": "packages/deep-filter/tsconfig.lib.json",
-        "assets": ["packages/deep-filter/*.md"]
+        "command": "tsup packages/deep-filter/src/lib/index.ts --minify --dts --tsconfig='packages/deep-filter/tsconfig.json' --outDir='packages/deep-filter/dist'"
       }
     },
     "publish": {
