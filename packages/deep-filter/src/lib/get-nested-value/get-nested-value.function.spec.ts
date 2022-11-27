@@ -14,10 +14,10 @@ describe('Tests for getNestedValue', () => {
   };
 
   it('Should extract value from level 1 depth', () => {
-    expect(getNestedValue<User>(USER, 'name')).toEqual('Bob');
+    expect(getNestedValue<User, 1>(USER, 'name')).toEqual('Bob');
   });
 
   it('Should extract value from deep nested property', () => {
-    expect(getNestedValue<User>(USER, 'address.geo.lat')).toEqual('11');
+    expect(getNestedValue<User, 3>(USER, 'address.geo.lat')).toEqual('11');
   });
 });

@@ -4,12 +4,12 @@ import { DeepNested } from './deep-nested.type';
 
 it('Should provide proper intellisense', () => {
   // Arrange
-  const geo: DeepNested<User, 'address.geo'> = {
+  const geo: DeepNested<User, 2, 'address.geo'> = {
     lat: '12',
     lng: '123',
   };
 
-  const lat: DeepNested<User, 'address.geo.lat'> = 'here be latitude';
+  const lat: DeepNested<User, 3, 'address.geo.lat'> = 'here be latitude';
 
   // Assert
   expect([geo, lat]).toBeTruthy();

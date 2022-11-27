@@ -1,8 +1,9 @@
 import { PropertyPath } from '@merry-solutions/property-path';
 
-export function getNestedValue<T>(a: T, p: PropertyPath<T>): unknown {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
+export function getNestedValue<T, D extends number>(
+  a: T,
+  p: PropertyPath<T, D>
+): unknown {
   return (<string>p)
     .split('.')
     .reduce<unknown>(

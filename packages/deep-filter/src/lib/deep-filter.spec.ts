@@ -31,9 +31,7 @@ describe('Tests for deepFilter', () => {
 
   it('Should be able to perform filtering on 1st level', () => {
     expect(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      deepFilter<User, 'name', 'Bob'>(USERS, 'name', 'Bob').every(
+      deepFilter<User, 1, 'name', 'Bob'>(USERS, 'name', 'Bob').every(
         (i) => i.name === 'Bob'
       )
     ).toBeTruthy();
