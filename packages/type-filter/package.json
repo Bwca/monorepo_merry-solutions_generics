@@ -2,9 +2,27 @@
   "name": "@merry-solutions/type-filter",
   "version": "1.0.0",
   "type": "commonjs",
-  "dependencies": {
-    "@merry-solutions/property-path": "*",
-    "@merry-solutions/deep-nested": "*",
-    "@merry-solutions/deep-substituted": "*"
-  }
+  "keywords": [
+    "filter",
+    "typescript",
+    "array"
+  ],
+  "description": "Type filter is a package, the purpose of which is to provide proper typing to filtered results. The types are now narrowed according to the filtering condition.",
+  "author": {
+    "name": "Volodymyr Yepishev",
+    "email": "i.m.bwca@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bwca/monorepo_merry-solutions_generics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bwca/monorepo_merry-solutions_generics/issues"
+  },
+  "homepage": "https://github.com/Bwca/monorepo_merry-solutions_generics/tree/master/packages/type-filter#readme",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**"
+  ]
 }
