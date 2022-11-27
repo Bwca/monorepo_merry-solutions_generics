@@ -1,6 +1,6 @@
 {
   "name": "@merry-solutions/deep-nested",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "commonjs",
   "dependencies": {
     "@merry-solutions/property-path": "*"

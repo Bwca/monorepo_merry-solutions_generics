@@ -4,7 +4,7 @@ import { PropertyPath } from '@merry-solutions/property-path';
 
 import { getNestedValue } from './get-nested-value/get-nested-value.function';
 
-export function deepFilter<
+export function typeFilter<
   T,
   P extends PropertyPath<T, D>,
   S extends DeepNested<T, D, P>,

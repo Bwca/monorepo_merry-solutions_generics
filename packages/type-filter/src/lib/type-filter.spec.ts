@@ -1,8 +1,8 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { User } from '../../../shared/src';
-import { deepFilter } from '../../dist';
+import { typeFilter } from '../../dist';
 
-describe('Tests for deepFilter', () => {
+describe('Tests for typeFilter', () => {
   const USERS: User[] = [
     {
       address: {
@@ -25,7 +25,7 @@ describe('Tests for deepFilter', () => {
   ];
 
   it('should exist', () => {
-    expect(deepFilter).toBeTruthy();
+    expect(typeFilter).toBeTruthy();
   });
 
   it('Should be able to perform filtering on 1st level', () => {
@@ -33,7 +33,7 @@ describe('Tests for deepFilter', () => {
     const filterName = 'Bob';
 
     // Act
-    const results = deepFilter<User, 'name', typeof filterName>(
+    const results = typeFilter<User, 'name', typeof filterName>(
       USERS,
       'name',
       filterName
@@ -50,7 +50,7 @@ describe('Tests for deepFilter', () => {
     const filterLang = '33';
 
     // Act
-    const results = deepFilter<User, 'address.geo.lng', typeof filterLang>(
+    const results = typeFilter<User, 'address.geo.lng', typeof filterLang>(
       USERS,
       'address.geo.lng',
       filterLang

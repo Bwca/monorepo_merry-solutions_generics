@@ -1,6 +1,6 @@
 {
-  "name": "@merry-solutions/deep-filter",
-  "version": "0.0.1",
+  "name": "@merry-solutions/type-filter",
+  "version": "1.0.0",
   "type": "commonjs",
   "dependencies": {
     "@merry-solutions/property-path": "*",
