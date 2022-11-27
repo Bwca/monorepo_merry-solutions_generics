@@ -31,7 +31,8 @@
       "options": {
         "jestConfig": "packages/deep-filter/jest.config.ts",
         "passWithNoTests": true
-      }
+      },
+      "dependsOn": ["build"]
     }
   },
   "tags": []
