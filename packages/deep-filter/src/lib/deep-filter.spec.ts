@@ -30,20 +30,36 @@ describe('Tests for deepFilter', () => {
   });
 
   it('Should be able to perform filtering on 1st level', () => {
+    // Arrange
+    const filterName = 'Bob';
+
+    // Act
+    const results = deepFilter<User, 'name', typeof filterName>(
+      USERS,
+      'name',
+      filterName
+    );
+
+    // Assert
     expect(
-      deepFilter<User, 'name', 'Bob'>(USERS, 'name', 'Bob').every(
-        (i) => i.name === 'Bob'
-      )
+      results.length && results.every((i) => i.name === filterName)
     ).toBeTruthy();
   });
 
   it('Should be able to perform filtering on nth level', () => {
+    // Arrange
+    const filterLang = '33';
+
+    // Act
+    const results = deepFilter<User, 'address.geo.lng', typeof filterLang>(
+      USERS,
+      'address.geo.lng',
+      filterLang
+    );
+
+    // Assert
     expect(
-      deepFilter<User, 'address.geo.lng', 'Bob'>(
-        USERS,
-        'address.geo.lng',
-        'Bob'
-      ).every((i) => i.address.geo.lng === 'Bob')
+      results.length && results.every((i) => i.address.geo.lng === filterLang)
     ).toBeTruthy();
   });
 });
