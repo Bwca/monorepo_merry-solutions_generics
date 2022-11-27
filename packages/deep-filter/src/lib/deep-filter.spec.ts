@@ -31,9 +31,19 @@ describe('Tests for deepFilter', () => {
 
   it('Should be able to perform filtering on 1st level', () => {
     expect(
-      deepFilter<User, 1, 'name', 'Bob'>(USERS, 'name', 'Bob').every(
+      deepFilter<User, 'name', 'Bob'>(USERS, 'name', 'Bob').every(
         (i) => i.name === 'Bob'
       )
+    ).toBeTruthy();
+  });
+
+  it('Should be able to perform filtering on nth level', () => {
+    expect(
+      deepFilter<User, 'address.geo.lng', 'Bob'>(
+        USERS,
+        'address.geo.lng',
+        'Bob'
+      ).every((i) => i.address.geo.lng === 'Bob')
     ).toBeTruthy();
   });
 });

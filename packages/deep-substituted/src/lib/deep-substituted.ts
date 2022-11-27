@@ -12,7 +12,7 @@ export type DeepSubstituted<
     : K extends `${string & P}.${infer R}`
     ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      DeepSubstituted<T[P], R, S, [1, ...L]>
+      DeepSubstituted<T[P], D, R, S, [1, ...L]>
     : P extends K
     ? S
     : T[P];
