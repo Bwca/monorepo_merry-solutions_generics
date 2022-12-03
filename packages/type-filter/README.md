@@ -58,6 +58,8 @@ const USERS: User[] = [
 To filter out users and get an array in which every user has specific name, i.e. `Bob`, we pass the interface, along with property path and the filtering value:
 
 ```typescript
+import { typeFilter } from '@merry-solutions/type-filter';
+
 const results = typeFilter<User, 'name', 'Bob'>(USERS, 'name', 'Bob');
 
 results[0].name;
@@ -67,10 +69,21 @@ results[0].name;
 Nested paths are also supported, the nested level is the 4th parameter in the generics list, by default the max level is 99, so filtering by `lng` would look the following way:
 
 ```typescript
+import { typeFilter } from '@merry-solutions/type-filter';
+
 const results = typeFilter<User, 'address.geo.lng', '33'>(
   USERS,
   'address.geo.lng',
   '33'
 );
 // results[0].address.geo.lng is now of type '33' instead of 'string'
+```
+
+For filtering of primitives there is `primitiveTypeFilter` which is even more simple:
+
+```typescript
+import { primitiveTypeFilter } from '@merry-solutions/type-filter';
+
+const arrayOf2s = primitiveTypeFilter<number, 2>([1, 2, 3, 4, 5], 2);
+// arrayOf2s type is Array<2>
 ```
