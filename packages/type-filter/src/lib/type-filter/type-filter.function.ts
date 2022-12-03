@@ -4,7 +4,7 @@ import { PropertyPath } from '@merry-solutions/property-path';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { DEFAULT_DEPTH_LEVEL } from '@merry-solutions/shared';
 
-import { getNestedValue } from './get-nested-value/get-nested-value.function';
+import { getNestedValue } from '../get-nested-value/get-nested-value.function';
 
 export function typeFilter<
   TYPE,

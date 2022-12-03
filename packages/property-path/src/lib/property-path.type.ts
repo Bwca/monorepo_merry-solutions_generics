@@ -1,7 +1,7 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { DEFAULT_DEPTH_LEVEL } from '@merry-solutions/shared';
 
-type Primitive = string | number | bigint | boolean | undefined | symbol;
+export type Primitive = string | number | bigint | boolean | undefined | symbol;
 
 export type PropertyPath<
   TYPE,

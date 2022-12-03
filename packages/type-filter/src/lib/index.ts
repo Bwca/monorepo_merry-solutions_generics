@@ -1,1 +1,2 @@
-export { typeFilter } from './type-filter.function';
+export * from './type-filter';
+export * from './primitive-filter';
